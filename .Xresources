@@ -1,0 +1,10 @@
+#include "/home/david/.colors/gruvbox"
+
+URxvt.internalBorder: 19
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: chromium
+URxvt.matcher.button: 1
+URxvt.font: xft:Roboto Mono:size=11
+Xcursor.size: 18

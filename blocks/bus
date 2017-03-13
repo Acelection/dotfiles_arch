@@ -1,0 +1,12 @@
+#!/bin/bash
+
+proc=`ps -A | grep conky`
+    
+if [[ "${BLOCK_BUTTON}" -eq 1 ]] && [[ $proc -eq 0 ]]; then
+    python2 /usr/local/libexec/i3blocks/buspy 1
+
+elif [[ "${BLOCK_BUTTON}" -eq 1 ]] && [[ $proc != 0 ]]; then
+    python2 /usr/local/libexec/i3blocks/buspy 2
+else
+    python2 /usr/local/libexec/i3blocks/buspy 0
+fi

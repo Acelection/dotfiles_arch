@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+from datetime import datetime
+import time
+
+work=["6:34", "6:56", "7:04", "7:22", "7:34", "7:46", "7:56", "8:27", "9:01", "10:01", "11:01", "11:46", "12:06", "12:37", "12:42", "13:42", "14:12", "14:42", "15:47", "16:06", "16:22", "16:47", "17:06", "17:37", "18:10", "18:46", "20:57", "23:56"]
+
+a = datetime.now()
+time_now = a.hour*100 + a.minute
+time_diff = 99999
+output = 0
+
+for i in work:
+    previous = time_diff
+    b = datetime.strptime(i, "%H:%M")
+    time_next = b.hour*100 + b.minute
+    if time_next > time_now:
+	time_diff = time_next - time_now
+    if time_diff < previous:
+	output = time_diff
+if output == 1:
+    print(' {}'.format(output) + ' minute')
+else:
+    print(' {}'.format(output) + ' minutes')

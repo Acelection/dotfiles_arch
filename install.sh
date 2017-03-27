@@ -4,7 +4,7 @@ dir=$(pwd)
 
 #start by installing xorg and i3-gaps manually
 
-sudo pacman -S unzip numix-gtk-theme bc xclip python python2 python2-pip python-pip mlocate lightdm networkmanager openssh zsh vim lxappearance compton rofi rxvt-unicode mlocate dunst feh
+sudo pacman -S unzip numix-gtk-theme bc xclip python python2 python2-pip python-pip mlocate lightdm networkmanager openssh zsh vim lxappearance compton rofi rxvt-unicode mlocate dunst feh lightdm-gtk-greeter accountsservice
 
 sudo systemctl enable lightdm
 
@@ -17,10 +17,11 @@ sudo systemctl enable lightdm
 #fi
 
 mkdir ~/.colors/
-mkdir ~/.vim/
-mkdir ~/.vim/colors/
+mkdir -p ~/.vim/colors/
 mkdir ~/.fonts/
 mkdir ~/.i3/
+mkdir -p /usr/local/libexec/i3blocks
+mkdir ~/Pictures
 
 cd $dir
 sudo cp fonts/*.ttf ~/.fonts/
@@ -35,5 +36,9 @@ sudo cp blocks/* /usr/local/libexec/i3blocks/
 sudo cp .dunstrc ~/.dunstrc
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp .xprofile ~/.xprofile
+sudo cp wallpaper.jpg ~/Pictures
+sudo cp login.jpg /etc/lightdm/
+sudo cp david-user /var/lib/AccountsService/users/david
+sudo cp david-icon /var/lib/Accountsservice/icons/david
 
 rm -rf /tmp/install/
